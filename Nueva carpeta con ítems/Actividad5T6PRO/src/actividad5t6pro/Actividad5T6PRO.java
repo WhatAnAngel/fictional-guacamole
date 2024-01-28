@@ -12,7 +12,7 @@ public class Actividad5T6PRO {
         Scanner scanner = new Scanner(System.in);
 
         System.out.print("Introduce el nombre del alumno: ");
-        String nombreAlumno = scanner.nextLine();
+        String nombreAlumno = scanner.nextLine() + "\n";
         
         Fichero miFichero = new Fichero();
         miFichero.anadeLinea("alumnos.txt", nombreAlumno);
