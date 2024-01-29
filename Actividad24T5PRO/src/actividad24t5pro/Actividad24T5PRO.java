@@ -1,15 +1,16 @@
 package actividad24t5pro;
-
+import objetos.*;
 
 public class Actividad24T5PRO {
 
     public static void main(String[] args) {
-    //Crea una clase empleado y una subclase encargado. Los encargados reciben un 
-    //10% más de sueldo base que un empleado normal aunque realicen el mismo trabajo. 
-    //Implementa dichas clases en el paquete objetos y sobrescribe el método getSueldo() para 
-    //ambas clases.
     
+    Empleado miEmpleado = new Empleado("Mar", "Martínez", "420", 1500);
+    Encargado miEncargado = new Encargado("ElPutoCristian", "River", "666", 500, 10);
 
+        System.out.println(miEmpleado);
+        System.out.print(miEncargado);
+        System.out.println("Sueldo final: " + miEncargado.getSueldoBase());
 
     }
 
