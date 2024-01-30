@@ -1,4 +1,16 @@
 package actividad18t3;
+<<<<<<< HEAD
+import objetos.*;
+
+public class Actividad18T3 {
+
+    public static void main(String[] args) {
+    Medico medicoDigestivo = new Medico ("8978",  "Belén", "González",  "Digestivo" , 2560.50);
+    
+        
+        
+
+=======
 
 
 public class Actividad18T3 {
@@ -50,6 +62,7 @@ public class Actividad18T3 {
         System.out.println(medicoTraumatologo.mostrarDatos() + " euros - " +  
         retencionTrau + " euros - " + (medicoTraumatologo.getSueldo() - 
         retencionTrau) + " euros");
+>>>>>>> 9ff85f11c269ec7825a321e424d86c5c59c3bd9d
     }
 
 }
