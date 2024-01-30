@@ -1,17 +1,23 @@
 package actividad28t5pro;
- 
-import java.time.LocalDate;
+
 import java.time.LocalDateTime;
 import java.time.format.DateTimeFormatter;
-import java.util.Date;
+
+//Este método convierte una fecha en formato 
+//normal dd/mm/yyyy a formato americano mm/dd/yyyy
  
-public class ConversorFechas {
+    public class ConversorFechas {
  
     public String normalToAmericano(String fecha) {
         //Formatos
         DateTimeFormatter formatoInput = DateTimeFormatter.ofPattern("dd/MM/yyyy");
         DateTimeFormatter formatoOutput = DateTimeFormatter.ofPattern("MM/dd/yyyy");
         
+        DateTimeFormatter.ofPattern(formatoOutput);
+        return null;
+    }
+
+    }
         LocalDate newFecha = LocalDate.parse(fecha, formatoInput);
         return formatoOutput.format(newFecha);
     }
@@ -26,3 +32,4 @@ public class ConversorFechas {
     }
  
 }
+
