@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 /*
 Crear un objeto llamado Producto con las siguientes propiedades:
  codProducto
@@ -40,3 +41,26 @@ public class Actividad13T3 {
     }
     
 }
+=======
+/*
+ * To change this license header, choose License Headers in Project Properties.
+ * To change this template file, choose Tools | Templates
+ * and open the template in the editor.
+ */
+package actividad13t3;
+
+/**
+ *
+ * @author angelilai
+ */
+public class Actividad13T3 {
+
+    /**
+     * @param args the command line arguments
+     */
+    public static void main(String[] args) {
+        // TODO code application logic here
+    }
+    
+}
+>>>>>>> 9ff85f11c269ec7825a321e424d86c5c59c3bd9d
