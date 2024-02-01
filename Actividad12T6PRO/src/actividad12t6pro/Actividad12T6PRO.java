@@ -21,8 +21,11 @@ public class Actividad12T6PRO {
             Date lastModfDate = new Date(fichero.lastModified());
             String lastModf = "Última modificación: " + f.format(lastModfDate);
             String fileSize = "Tamaño del archivo: " + format.format(fichero.length()) + " bytes.";
-            System.out.println("");
+            System.out.println(tipo + "\n" + lastModf + "\n" + fileSize);
+        } else {
+            System.out.println("El fichero o directorio no existe");
         }
+        
     }
 
 }
