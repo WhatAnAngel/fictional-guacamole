@@ -1,20 +1,11 @@
 package actividad23t6pro;
 
-import java.awt.Insets;
-import java.awt.event.ActionEvent;
-import java.awt.event.ActionListener;
-import java.text.DecimalFormat;
-import java.text.ParseException;
-import java.text.SimpleDateFormat;
-import java.util.Date;
-import java.util.logging.Level;
-import java.util.logging.Logger;
-import javax.swing.JButton;
-import javax.swing.JFrame;
-import javax.swing.JLabel;
-import javax.swing.JPanel;
-import javax.swing.JTextArea;
-import javax.swing.JTextField;
+import java.awt.*;
+import java.awt.event.*;
+import java.time.*;
+import java.time.format.*;
+import java.time.temporal.ChronoUnit;
+import javax.swing.*;
 
 public class Formulario extends JFrame implements ActionListener {
 
@@ -50,7 +41,7 @@ public class Formulario extends JFrame implements ActionListener {
         fechaNacimientoT = new JLabel("Fecha de nacimiento:");
         fechaNacimientoT.setBounds(50, 100, 200, 30);
         miPanel.add(fechaNacimientoT);
-        
+
         // TEXTFIELDS
         nombreTF = new JTextField();
         nombreTF.setBounds(120, 60, 285, 30);
@@ -59,7 +50,7 @@ public class Formulario extends JFrame implements ActionListener {
         fechaNacimientoTF = new JTextField();
         fechaNacimientoTF.setBounds(190, 100, 215, 30);
         miPanel.add(fechaNacimientoTF);
-        
+
         // TEXTAREA
         resultadoTA = new JTextArea();
         resultadoTA.setBounds(46, 145, 360, 70);
@@ -93,13 +84,31 @@ public class Formulario extends JFrame implements ActionListener {
     public void actionPerformed(ActionEvent e) {
 
         //Formato fecha
-        SimpleDateFormat df = new SimpleDateFormat("DD/MM/YYYY");
-        
-        try {
-            Date fechaNac = df.parse(fechaNacimientoT.getText());
-        } catch (ParseException ex) {
-            Logger.getLogger(Formulario.class.getName()).log(Level.SEVERE, null, ex);
-        }
+        DateTimeFormatter formatter = DateTimeFormatter.ofPattern("dd/MM/yyyy");
 
+        String nombreAlumno;
+        int edad;
+        LocalDate fechaHoy = LocalDate.now();
+
+        if (e.getSource() == salirB) {
+            System.exit(0); //Salir del programa   
+        } else if (e.getSource() == limpiarB) {
+            tituloT.setText("Introduzca los datos del alumno/a:");
+            nombreTF.setText(""); //Limpiar todos los campos
+            fechaNacimientoTF.setText("");
+            resultadoTA.setText("");
+        } else {
+            try {
+                nombreAlumno = nombreTF.getText();
+                LocalDate fechaNacimiento = LocalDate.parse(fechaNacimientoTF.getText(), formatter);
+                edad = (int) (ChronoUnit.DAYS.between(fechaNacimiento, fechaHoy)) / 365;
+                resultadoTA.setText("La edad del alumno/a " + nombreAlumno
+                        + " es de: " + edad + " años.");
+            } catch (DateTimeParseException ex) {
+                tituloT.setText("Introduzca la fecha en formato DD/MM/AAAA");
+                resultadoTA.setText("Se ha producido un error. "
+                        + "Por favor, compruebe que el formato de la fecha introducida sea el siguiente: DD/MM/AAAA.");
+            }
+        }
     }
 }
