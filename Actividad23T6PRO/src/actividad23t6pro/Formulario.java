@@ -4,8 +4,11 @@ import java.awt.Insets;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.text.DecimalFormat;
+import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.Date;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 import javax.swing.JButton;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
@@ -92,7 +95,11 @@ public class Formulario extends JFrame implements ActionListener {
         //Formato fecha
         SimpleDateFormat df = new SimpleDateFormat("DD/MM/YYYY");
         
-        Date fechaNac = df.parse()
+        try {
+            Date fechaNac = df.parse(fechaNacimientoT.getText());
+        } catch (ParseException ex) {
+            Logger.getLogger(Formulario.class.getName()).log(Level.SEVERE, null, ex);
+        }
 
     }
 }
