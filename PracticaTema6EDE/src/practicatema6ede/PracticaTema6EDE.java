@@ -1,11 +1,11 @@
-package actividad22t6ede;
+package practicatema6ede;
 
 
-public class Actividad22T6EDE {
+public class PracticaTema6EDE {
 
+    
     public static void main(String[] args) {
         Formulario miFormulario = new Formulario();
         miFormulario.setVisible(true);
     }
-
 }
