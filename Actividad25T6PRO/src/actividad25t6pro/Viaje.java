@@ -65,7 +65,12 @@ public class Viaje {
 
     @Override
     public String toString() {
-        return "Viaje{" + "codigo=" + codigo + ", destino=" + destino + ", hotel=" + hotel + ", regAlojamiento=" + regAlojamiento + ", dias=" + dias + ", precio=" + precio + '}';
+        return "Código de viaje: " + codigo + 
+                "\nDestino: " + destino + 
+                "\nHotel: " + hotel + 
+                "\n" + regAlojamiento + 
+                "\nDías: " + dias + 
+                "\nPrecio: " + precio + "€";
     }
     
 }
