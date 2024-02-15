@@ -154,9 +154,15 @@ public class Formulario extends JFrame implements ActionListener{
             
             if (divisaIn == "euros"){
                 if (divisaOut == "libras"){
-                    importeOut = importeIn*1.15;
-                }
-            }
+                    importeOut = 1.15;
+                }else if (divisaOut == "francos"){
+                    importeOut = 0.9;
+                } else { 
+                    importeOut = 1;
+                } 
+            } 
+            importeOut*=importeIn;
+            importeOuTF.setText(""+importeOut);
         }
         
         
