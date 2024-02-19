@@ -108,6 +108,41 @@ public class Formulario extends JFrame implements ActionListener{
                 tituloT.setText("Valor introducido incorrecto");
             }
             
+<<<<<<< HEAD:Actividad22T6EDE/src/actividad22t6ede/Formulario.java
+            if (e.getSource() == eurosInB){
+                divisaIn = "euros";
+            } else if (e.getSource() == librasInB){
+                divisaIn = "libras";
+            } else if (e.getSource() == francosInB){
+                divisaIn = "francos";
+            }
+            divisaInTF.setText(divisaIn);
+            
+            if (e.getSource() == eurosOuB){
+                divisaOut = "euros";
+            } else if (e.getSource() == librasOuB){
+                divisaOut = "libras";
+            } else if (e.getSource() == francosOuB){
+                divisaOut = "francos";
+            }
+            divisaOuTF.setText(divisaOut);
+            
+            if (divisaIn == "euros"){
+                if (divisaOut == "libras"){
+                    importeOut = 1.15;
+                }else if (divisaOut == "francos"){
+                    importeOut = 0.9;
+                } else { 
+                    importeOut = 1;
+                } 
+            } 
+            importeOut*=importeIn;
+            importeOuTF.setText(""+importeOut);
+        }
+        
+        
+        
+=======
             if (e.getSource() == librasB){
                 importeOut = importeIn*1.15;
                 divisaOuTF.setText("libras");
@@ -118,6 +153,7 @@ public class Formulario extends JFrame implements ActionListener{
             importeOuTF.setText(""+importeOut);
 
         }      
+>>>>>>> 2da260bcb9d75483ba6fcbc7189b3a4fbbc0282d:Actividad22T6EDE/src/actividad22t6pro/Formulario.java
         
     }
 
