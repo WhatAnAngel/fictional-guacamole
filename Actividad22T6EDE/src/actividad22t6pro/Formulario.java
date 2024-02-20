@@ -4,7 +4,7 @@ import java.awt.*;
 import java.awt.event.*;
 import javax.swing.*;
 
-public class Formulario extends JFrame implements ActionListener{
+public class Formulario extends JFrame implements ActionListener {
 
     //Atributos
     JPanel miPanel;
@@ -12,7 +12,7 @@ public class Formulario extends JFrame implements ActionListener{
     JTextField importeInTF, divisaInTF, importeOuTF, divisaOuTF;
     JButton francosB, librasB;
     JButton calcularB, salirB, limpiarB;
-    
+
     public Formulario() {
 
         // Propiedades del formulario
@@ -34,13 +34,12 @@ public class Formulario extends JFrame implements ActionListener{
         importeInT = new JLabel("Importe: ");
         importeInT.setBounds(50, 70, 100, 30);
         miPanel.add(importeInT);
-        
+
         importeOuT = new JLabel("Cambio: ");
         importeOuT.setBounds(50, 115, 100, 30);
         miPanel.add(importeOuT);
 
         // TEXTFIELDS
-        
         //Entrada
         importeInTF = new JTextField();
         importeInTF.setBounds(110, 70, 190, 30);
@@ -51,7 +50,7 @@ public class Formulario extends JFrame implements ActionListener{
         divisaInTF.setFocusable(false);
         divisaInTF.setText("euros");
         miPanel.add(divisaInTF);
-        
+
         //Salida
         importeOuTF = new JTextField();
         importeOuTF.setBounds(110, 115, 190, 30);
@@ -68,12 +67,12 @@ public class Formulario extends JFrame implements ActionListener{
         francosB.setBounds(45, 170, 160, 40);
         miPanel.add(francosB);
         francosB.addActionListener(this);
-        
+
         librasB = new JButton("Libras");
         librasB.setBounds(240, 170, 160, 40);
         miPanel.add(librasB);
-        librasB.addActionListener(this); 
-  
+        librasB.addActionListener(this);
+
         //Limpiar y cerrar
         salirB = new JButton("Salir");
         salirB.setBounds(305, 235, 100, 30);
@@ -88,11 +87,11 @@ public class Formulario extends JFrame implements ActionListener{
         // Añadimos el panel al JFrame
         add(miPanel);
     }
-    
+
     @Override
     public void actionPerformed(ActionEvent e) {
         double importeIn = 0, importeOut = 0;
-        
+
         if (e.getSource() == salirB) {
             System.exit(0); //Salir del programa   
         } else if (e.getSource() == limpiarB) {
@@ -101,60 +100,52 @@ public class Formulario extends JFrame implements ActionListener{
             importeOuTF.setText("");
             divisaOuTF.setText("");
         } else {
-            
-            try{
+
+            try {
                 importeIn = Double.parseDouble(importeInTF.getText());
-            }catch(NumberFormatException ex){
+            } catch (NumberFormatException ex) {
                 tituloT.setText("Valor introducido incorrecto");
             }
-            
-<<<<<<< HEAD:Actividad22T6EDE/src/actividad22t6ede/Formulario.java
-            if (e.getSource() == eurosInB){
+            if (e.getSource() == eurosInB) {
                 divisaIn = "euros";
-            } else if (e.getSource() == librasInB){
+            } else if (e.getSource() == librasInB) {
                 divisaIn = "libras";
-            } else if (e.getSource() == francosInB){
+            } else if (e.getSource() == francosInB) {
                 divisaIn = "francos";
             }
             divisaInTF.setText(divisaIn);
-            
-            if (e.getSource() == eurosOuB){
+
+            if (e.getSource() == eurosOuB) {
                 divisaOut = "euros";
-            } else if (e.getSource() == librasOuB){
+            } else if (e.getSource() == librasOuB) {
                 divisaOut = "libras";
-            } else if (e.getSource() == francosOuB){
+            } else if (e.getSource() == francosOuB) {
                 divisaOut = "francos";
             }
             divisaOuTF.setText(divisaOut);
-            
-            if (divisaIn == "euros"){
-                if (divisaOut == "libras"){
-                    importeOut = 1.15;
-                }else if (divisaOut == "francos"){
-                    importeOut = 0.9;
-                } else { 
-                    importeOut = 1;
-                } 
-            } 
-            importeOut*=importeIn;
-            importeOuTF.setText(""+importeOut);
-        }
-        
-        
-        
-=======
-            if (e.getSource() == librasB){
-                importeOut = importeIn*1.15;
-                divisaOuTF.setText("libras");
-            } else {
-                importeOut = importeIn*0.9;
-                divisaOuTF.setText("francos");
-            } 
-            importeOuTF.setText(""+importeOut);
 
-        }      
->>>>>>> 2da260bcb9d75483ba6fcbc7189b3a4fbbc0282d:Actividad22T6EDE/src/actividad22t6pro/Formulario.java
-        
+            if (divisaIn == "euros") {
+                if (divisaOut == "libras") {
+                    importeOut = 1.15;
+                } else if (divisaOut == "francos") {
+                    importeOut = 0.9;
+                } else {
+                    importeOut = 1;
+                }
+            }
+            importeOut *= importeIn;
+            importeOuTF.setText("" + importeOut);
+        }
+
+        if (e.getSource() == librasB) {
+            importeOut = importeIn * 1.15;
+            divisaOuTF.setText("libras");
+        } else {
+            importeOut = importeIn * 0.9;
+            divisaOuTF.setText("francos");
+        }
+        importeOuTF.setText("" + importeOut);
+
     }
 
 }
