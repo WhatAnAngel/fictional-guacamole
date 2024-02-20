@@ -6,18 +6,21 @@ public class SimulacroPROAct2 {
 
     public static void main(String[] args) throws FileNotFoundException, IOException {
 
+        FileReader fichero = new FileReader("helloworld.txt");
+        BufferedReader br = new BufferedReader(fichero);
         try {
-            FileReader fr = new FileReader("helloworld.txt");
-            while ((int caracter = fr.read()) != -1) {
-                int caracterActual = caracter;
-                String octal = Integer.toOctalString(caracterActual);
-                System.out.println("Número leído: " + caracterActual);
-                System.out.println("El número en octal es: " + octal);
+            String line;
+            while ((line = br.readLine()) != null) {
+                int numActual = Integer.parseInt(line);
+                String octal = Integer.toOctalString(numActual);
+                System.out.println("Número leído: " + numActual);
+                System.out.println("Número en octal: " + octal);
                 System.out.println("-----------------------------------------");
             }
-            fr.close();
         } catch (IOException e) {
             System.err.println("Error al leer el archivo: " + e.getMessage());
         }
+        fichero.close();
     }
+
 }
