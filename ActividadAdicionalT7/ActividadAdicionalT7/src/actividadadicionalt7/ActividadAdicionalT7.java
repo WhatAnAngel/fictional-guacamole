@@ -47,9 +47,6 @@ public class ActividadAdicionalT7 {
             que tenga en esa iteración la variable "temp" */
             i++;
         }
-        
-        br.close();
-        fr.close();
 
         // Pedimos una ubicación por teclado
         Scanner sc = new Scanner(System.in);
