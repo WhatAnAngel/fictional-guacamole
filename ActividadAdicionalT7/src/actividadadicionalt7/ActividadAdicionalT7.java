@@ -47,7 +47,14 @@ public class ActividadAdicionalT7 {
             que tenga en esa iteración la variable "temp" */
             i++;
         }
+
+        // Pedimos una ubicación por teclado
+        Scanner sc = new Scanner(System.in);
+        System.out.print("Introduce una ubicación: ");
+        String ubicacionIntroducida = sc.nextLine();
         
+<<<<<<< HEAD
+=======
         br.close();
         fr.close();
 
@@ -56,6 +63,7 @@ public class ActividadAdicionalT7 {
         System.out.print("Introduce una ubicación: ");
         String ubicacionIntroducida = sc.nextLine();
         
+>>>>>>> daf18df3b0133a880d389c8a2dd5381f5d4fee31
         /* Por cada objeto de tipo "Temperatura" (al cual llamaremos "tempr", por ejemplo, 
         para referirnos a él dentro del bucle) que hay en el array 
         de objetos de tipo "Temperatura" que se llama "temperaturas" (...) */
