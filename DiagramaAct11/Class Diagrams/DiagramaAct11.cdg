@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<ClassDiagram name="DiagramaAct11">
+  <ClassDiagramComponents>
+    <Class name="Vehiculo" package="" visibility="public" xPosition="328.0" yPosition="37.0">
+      <Fields>
+        <Field name="matricula" type="String" visibility="private"/>
+        <Field name="marca" type="String" visibility="private"/>
+        <Field name="modelo" type="String" visibility="private"/>
+        <Field name="cilindrada" type="int" visibility="private"/>
+        <Field name="potencia" type="int" visibility="private"/>
+        <Field name="velocidadMax" type="int" visibility="private"/>
+        <Field name="color" type="String" visibility="private"/>
+        <Field name="precio" type="double" visibility="private"/>
+      </Fields>
+      <Constructors>
+        <Constructor visibility="public">
+          <Argument type="String" name="matricula"/>
+          <Argument type="String" name="marca"/>
+          <Argument type="String" name="modelo"/>
+          <Argument type="int" name="cilindrada"/>
+          <Argument type="int" name="potencia"/>
+          <Argument type="int" name="velocidadMax"/>
+          <Argument type="String" name="color"/>
+          <Argument type="double" name="precio"/>
+        </Constructor>
+      </Constructors>
+      <Methods>
+        <Method name="toString" returnType="String" visibility="public"/>
+      </Methods>
+    </Class>
+    <Class name="Coche" package="" visibility="public" xPosition="363.0" yPosition="461.0">
+      <Fields>
+        <Field name="elevElectrico" type="boolean" visibility="private"/>
+        <Field name="cierreCentralizado" type="boolean" visibility="private"/>
+        <Field name="airbag" type="boolean" visibility="private"/>
+        <Field name="motor" type="String" visibility="private"/>
+      </Fields>
+      <Constructors>
+        <Constructor visibility="public">
+          <Argument type="boolean" name="elevElectrico"/>
+          <Argument type="boolean" name="cierreCentralizado"/>
+          <Argument type="boolean" name="airbag"/>
+          <Argument type="String" name="motor"/>
+        </Constructor>
+      </Constructors>
+      <Methods>
+        <Method name="calculaIva" returnType="double" visibility="public"/>
+        <Method name="toString" returnType="String" visibility="public"/>
+        <Method name="importeExtra" returnType="double" visibility="public"/>
+      </Methods>
+    </Class>
+  </ClassDiagramComponents>
+  <ClassDiagramRelations>
+    <IsRelation name="is" source="Coche" target="Vehiculo"/>
+  </ClassDiagramRelations>
+</ClassDiagram>

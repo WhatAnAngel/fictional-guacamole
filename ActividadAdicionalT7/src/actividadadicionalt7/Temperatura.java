@@ -61,9 +61,4 @@ public class Temperatura {
     public String toString() {
         return "Temperatura= " + temperatura + ", Ubicacion= " + ubicacion + ", Fecha= " + fecha;
     }
-
-<<<<<<< HEAD
 }
-=======
-}
->>>>>>> daf18df3b0133a880d389c8a2dd5381f5d4fee31

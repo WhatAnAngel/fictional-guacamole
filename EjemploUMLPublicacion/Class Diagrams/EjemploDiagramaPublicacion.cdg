@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<ClassDiagram name="EjemploDiagramaPublicacion">
+  <ClassDiagramComponents>
+    <Class name="Publicacion" package="" visibility="public" xPosition="117.0" yPosition="27.0">
+      <Fields>
+        <Field name="id" type="int" visibility="private"/>
+        <Field name="titulo" type="String" visibility="private"/>
+        <Field name="tema" type="String" visibility="private"/>
+        <Field name="autor" type="String" visibility="private"/>
+        <Field name="fechaPublicacion" type="LocalDate" visibility="private"/>
+      </Fields>
+      <Constructors>
+        <Constructor visibility="public">
+          <Argument type="int" name="id"/>
+          <Argument type="String" name="titulo"/>
+          <Argument type="String" name="tema"/>
+          <Argument type="String" name="tema"/>
+          <Argument type="LocalDate" name="fechaPublicacion"/>
+        </Constructor>
+      </Constructors>
+      <Methods>
+        <Method name="setId" returnType="int" visibility="public">
+          <Argument type="int" name="id"/>
+        </Method>
+        <Method name="getId" returnType="int" visibility="public"/>
+        <Method name="toString" returnType="String" visibility="public"/>
+      </Methods>
+    </Class>
+    <Class name="Libro" package="" visibility="public" xPosition="117.0" yPosition="388.0">
+      <Fields>
+        <Field name="numPaginas" type="int" visibility="private"/>
+      </Fields>
+      <Constructors/>
+      <Methods>
+        <Method name="setNumPaginas" returnType="int" visibility="public">
+          <Argument type="int" name="numPaginas"/>
+        </Method>
+        <Method name="getNumPaginas" returnType="int" visibility="public"/>
+        <Method name="toString" returnType="String" visibility="public"/>
+      </Methods>
+    </Class>
+    <Class name="Revista" package="" visibility="public" xPosition="415.0" yPosition="388.0">
+      <Fields>
+        <Field name="color" type="boolean" visibility="private"/>
+      </Fields>
+      <Constructors/>
+      <Methods>
+        <Method name="setColor" returnType="void" visibility="public">
+          <Argument type="boolean" name="color"/>
+        </Method>
+        <Method name="getColor" returnType="boolean" visibility="public"/>
+        <Method name="toString" returnType="String" visibility="public"/>
+      </Methods>
+    </Class>
+  </ClassDiagramComponents>
+  <ClassDiagramRelations>
+    <IsRelation name="is" source="Revista" target="Publicacion"/>
+    <IsRelation name="is" source="Libro" target="Publicacion"/>
+  </ClassDiagramRelations>
+</ClassDiagram>
