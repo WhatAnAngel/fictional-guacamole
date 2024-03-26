@@ -1,19 +1,20 @@
 package actividad51t7pro;
 
-
 public class Actividad51T7PRO {
 
     public static void main(String[] args) {
 
         String cadena = "3.500,00 €";
-        String delante = "";
-        while(cadena.length()<20){
-            while(cadena.length() < (cadena.length()+(20-cadena.length())/2)){
-                delante += "#";
+        String almohadilla = "#";
+
+        while (cadena.length() < 20) {
+            cadena = (almohadilla.concat(cadena)); //aquí se la pone delante
+            if (cadena.length() < 20) {
+                cadena = cadena.concat(almohadilla); //aquí se la pone detrás
             }
-            cadena+="#";
         }
         System.out.println(cadena);
+        System.out.println("Total caracteres: " + cadena.length());
     }
 
 }
